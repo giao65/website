@@ -42,7 +42,7 @@ function submit() {
       content,
     };
 
-    postData("http://0.0.0.0:5000/predict", data).then((result) => {
+    postData("http://127.0.0.1:5000//predict", data).then((result) => {
       console.log(result);
       document.getElementById("resultText").innerHTML = predictType(result);
     });
