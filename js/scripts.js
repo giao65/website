@@ -36,7 +36,7 @@ function submit() {
   if (content == "") {
     // alert("新聞呢?");
     console.log("收到")
-    document.getElementById("resultText").innerHTML = "狗咩那賽,空的不接^^";
+    document.getElementById("resultText").innerHTML = "請輸入新聞";
   } else {
     const data = {
       content,
