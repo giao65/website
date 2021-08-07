@@ -31,7 +31,7 @@ function predictType(result) {
   }
 }
 
-function submit() {
+function onSubmit() {
   const content = document.getElementById("content").value;
   if (content == "") {
     // alert("新聞呢?");
@@ -42,13 +42,13 @@ function submit() {
       content,
     };
 
-    postData("http://521a9c442363.ngrok.io/predict", data).then((result) => {
+    postData("http://127.0.0.1:5000/predict", data).then((result) => {
       console.log(result);
       document.getElementById("resultText").innerHTML = predictType(result);
     });
   }
 }
-document.getElementById("submit").addEventListener("click", submit);
+
 
 window.addEventListener("DOMContentLoaded", (event) => {
   // Navbar shrink function
