@@ -42,7 +42,7 @@ function onSubmit() {
       content,
     };
 
-    postData("http://127.0.0.1:5000/predict", data).then((result) => {
+    postData("http://2a014b46a4f4.ngrok.io/predict", data).then((result) => {
       console.log(result);
       document.getElementById("resultText").innerHTML = predictType(result);
     });
