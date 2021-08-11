@@ -42,7 +42,7 @@ function onSubmit() {
       content,
     };
 
-    postData("http://85a5edc60d24.ngrok.io/predict", data).then((result) => {
+    postData("http://21dbd1f2884d.ngrok.io/predict", data).then((result) => {
       console.log(result);
       document.getElementById("resultText").innerHTML = predictType(result);
     });
