@@ -24,20 +24,27 @@ function postData(url, data) {
 }
 
 function predictType(result) {
-  if (result[27] == 0) {
+  if (result[27] === 0) {
     return "有" + (result.slice(9, 15) * 100).toFixed(2) + "%的機率是假新聞";
   } else {
     return "有" + (result.slice(9, 15) * 100).toFixed(2) + "%的機率是真新聞";
   }
 }
 
+function resetText(){
+  const resultText = document.getElementById("resultText").innerHTML;
+  if(resultText!==""){
+    document.getElementById("resultText").innerHTML = "";
+  }
+} 
+
 function onSubmit() {
   const content = document.getElementById("content").value;
-  if (content == "") {
-    // alert("新聞呢?");
-    console.log("收到")
+  if (content === "") {
     document.getElementById("resultText").innerHTML = "請輸入新聞";
   } else {
+    resetText();
+    
     const data = {
       content,
     };
