@@ -24,7 +24,7 @@ function postData(url, data) {
 }
 
 function predictType(result) {
-  if (result[28] == 0) {
+  if (result[27] != 1) {
     console.log(result[27]);
     return "有" + (result.slice(9, 15) * 100).toFixed(2) + "%的機率是假新聞";
   } else {
