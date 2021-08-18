@@ -24,7 +24,7 @@ function postData(url, data) {
 }
 
 function predictType(result) {
-  if (result[27] === 0) {
+  if (result[27] == 0) {
     return "有" + (result.slice(9, 15) * 100).toFixed(2) + "%的機率是假新聞";
   } else {
     return "有" + (result.slice(9, 15) * 100).toFixed(2) + "%的機率是真新聞";
@@ -33,14 +33,14 @@ function predictType(result) {
 
 function resetText(){
   const resultText = document.getElementById("resultText").innerHTML;
-  if(resultText!==""){
+  if(resultText!=""){
     document.getElementById("resultText").innerHTML = "";
   }
 } 
 
 function onSubmit() {
   const content = document.getElementById("content").value;
-  if (content === "") {
+  if (content == "") {
     document.getElementById("resultText").innerHTML = "請輸入新聞";
   } else {
     resetText();
