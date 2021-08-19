@@ -51,7 +51,7 @@ function onSubmit() {
       content,
     };
 
-    postData("http://8f212559d6e3.ngrok.io/predict", data).then((result) => {
+    postData("http://f1540cfb252b.ngrok.io/predict", data).then((result) => {
       console.log(result);
       document.getElementById("resultText").innerHTML = predictType(result);
     });
