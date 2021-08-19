@@ -29,7 +29,7 @@ function predictType(result) {
     return "有" + (result.slice(9, 15) * 100).toFixed(2) + "%的機率是假新聞";
   } else {
     console.log("real");
-    return "有" + (result.slice(9, 15) * 100).toFixed(2) + "%的機率是真新聞";
+    return "有" + ((1 - result.slice(9, 15)) * 100).toFixed(2) + "%的機率是假新聞";
   }
 }
 
@@ -51,7 +51,7 @@ function onSubmit() {
       content,
     };
 
-    postData("http://e21f4a773840.ngrok.io/predict", data).then((result) => {
+    postData("http://8f212559d6e3.ngrok.io/predict", data).then((result) => {
       console.log(result);
       document.getElementById("resultText").innerHTML = predictType(result);
     });
